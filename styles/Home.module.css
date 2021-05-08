@@ -9,10 +9,10 @@
 
 .carouselCaption {
   position: absolute;
-  width: 790px;
+  width: 810px;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 165px;
+  bottom: 155px;
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;

@@ -24,7 +24,7 @@ function Home(props) {
                     <Carousel.Caption className={styles.carouselCaption}>
                         <h1 className={styles.title}>Why Nextjs</h1>
                         <ul>
-                            <li className={styles.item}>Giúp SEO tốt hơn, hiện tai chỉ có google có thể index được CSR,
+                            <li className={styles.item}>Giúp SEO tốt hơn, hiện tại chỉ có Google có thể index được CSR,
                                 còn lại thì không
                             </li>
                             <li className={styles.item}>Có thể render page bằng SSR hoặc SSG</li>

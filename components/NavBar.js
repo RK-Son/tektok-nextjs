@@ -1,12 +1,14 @@
-import styles from '../styles/Layout.module.css';
 import Link from 'next/link'
+import Image from 'next/image'
 import {Button, Nav, Navbar, Form, FormControl} from "react-bootstrap";
+
+import styles from "../styles/NavBar.module.css"
 
 function NavBar(props) {
     return (
-        <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-            <Nav className="mr-auto">
+        <Navbar className={styles.navbar}>
+            <Image src="/Nextjs-logo.svg" width={79} height={49}/>
+            <Nav className="ml-2 mr-auto">
                 <Link href="/">
                     <Nav.Link href="#home">Home</Nav.Link>
                 </Link>
