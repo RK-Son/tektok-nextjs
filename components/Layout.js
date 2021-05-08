@@ -1,10 +1,11 @@
 import styles from '../styles/Layout.module.css';
+import NavBar from "./NavBar";
 
 
 function Layout(props) {
     return (
         <div className={styles.container}>
-            <h1 className='text-center'>Nextjs Tesktok</h1>
+            <NavBar/>
             {
                 props.children
             }

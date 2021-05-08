@@ -1,34 +1,34 @@
 .container {
-
+  width: 100vw;
+  height: 100vh;
+  background-color: #20232a;
+}
+.carousel {
+  /*margin-top: 35px;*/
 }
 
-.productCard {
-    cursor: pointer;
-    width: 250px;
+.carouselCaption {
+  position: absolute;
+  width: 790px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 165px;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: left;
 }
 
-.productContainer {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-row-gap: 20px;
-    padding: 50px;
+.item {
+  font-size: 22px;
 }
 
-.productTitle {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+.item:not(:last-child) {
+  margin-bottom: 10px;
 }
 
-.productDescription {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.cardFooter {
-    text-align: right;
-    padding: 10px;
+.title {
+  margin-bottom: 55px;
+  margin-left: 32px;
 }

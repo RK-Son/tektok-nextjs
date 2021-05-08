@@ -1,53 +1,70 @@
-import Image from 'next/image'
-import Link from 'next/link'
-
-import Card from 'react-bootstrap/Card'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button'
-
-
-import styles from '../styles/Home.module.css'
+import Carousel from 'react-bootstrap/Carousel'
+import styles from '../styles/Home.module.css';
+import {useEffect} from "react";
+import {useRouter} from 'next/router';
 
 function Home(props) {
 
+    const router = useRouter();
+
+    useEffect(() => {
+        router.prefetch('/product');
+    }, [])
+
     return (
-        <div className={styles.productContainer}>
-            {
-                props.products.map((product) => (
-                    // <Col key={product.id}>
-                    <Card className={styles.productCard}>
-                        <Image src={product.image} width={200} height={200}/>
-                        <Card.Body>
-                            <Card.Title className={styles.productTitle}>{product.title}</Card.Title>
-                            <Card.Text className={styles.productDescription}>
-                                Some quick example text to build on the card title and make up the bulk of
-                                the card's content.
-                            </Card.Text>
-                        </Card.Body>
-                        <div className={styles.cardFooter}>
-                            <Link href={`product/${product.id}`}>
-                                <a>Go to detail</a>
-                            </Link>
-                        </div>
-                    </Card>
-                    // </Col>
-                ))
-            }
+        <div className={styles.container}>
+            <Carousel className={styles.carousel} interval={null}>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        width={800}
+                        height={600}
+                        src="download.svg"
+                    />
+                    <Carousel.Caption className={styles.carouselCaption}>
+                        <h1 className={styles.title}>Why Nextjs</h1>
+                        <ul>
+                            <li className={styles.item}>Giúp SEO tốt hơn, hiện tai chỉ có google có thể index được CSR,
+                                còn lại thì không
+                            </li>
+                            <li className={styles.item}>Có thể render page bằng SSR hoặc SSG</li>
+                            <li className={styles.item}>Chức năng Incremental Static Regeneration</li>
+                            <li className={styles.item}>Hỗ trợ tự động optimize image, image mặc định là lazyload</li>
+                            <li className={styles.item}>Api routes giúp mình có thể code luôn cả backend</li>
+                        </ul>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        width={800}
+                        height={600}
+                        src="download.svg"
+                        alt="Second slide"
+                    />
+
+                    <Carousel.Caption>
+                        <h3>Second slide label</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        width={800}
+                        height={600}
+                        src="download.svg"
+                        alt="Third slide"
+                    />
+
+                    <Carousel.Caption>
+                        <h3>Third slide label</h3>
+                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+            </Carousel>
         </div>
     )
-}
-
-export const getServerSideProps = async (context) => {
-    const res = await fetch('https://fakestoreapi.com/products')
-    const products = await res.json();
-
-    return {
-        props: {
-            products
-        }
-    }
 }
 
 export default Home
