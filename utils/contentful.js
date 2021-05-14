@@ -42,9 +42,9 @@ export const syncProductWithContentful = async () => {
     })
 }
 
-export const getProducts = async () => {
+export const getProducts = async ({limit}) => {
     const environment = await getEnvironment();
-    const products = (await environment.getEntries({content_type: 'product'}))?.items
+    const products = (await environment.getEntries({content_type: 'product', limit}))?.items
     return products.map(product => {
         const fields = product.fields;
         return {

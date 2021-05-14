@@ -27,7 +27,6 @@ function Index(props) {
                             </Link>
                         </div>
                     </Card>
-                    // </Col>
                 ))
             }
         </div>
@@ -35,8 +34,7 @@ function Index(props) {
 }
 
 export const getServerSideProps = async (context) => {
-    const products = await getProducts()
-    console.log(products)
+    const products = await getProducts({limit: 15})
     return {
         props: {
             products: products
