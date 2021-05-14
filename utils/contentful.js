@@ -1,9 +1,9 @@
 import {createClient} from 'contentful-management'
 
-const spaceId = 'td050h71liyd'
-const accessToken = 'oQERBXdVJqWyCV0Hw9fSZIch-WVSmZCzFaGHj0_9t04'
-const accessTokenContentfulManament = 'CFPAT-IoMrqwL1zslLysDAmRDsOlFG_aNGeXH1MCLmDnktqg0'
-const environmentId = 'master'
+const spaceId = process.env.CONTENTFUL_SPACE_ID
+const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN
+const accessTokenContentfulManament = process.env.CONTENTFUL_MANAMENT_ACCESS_TOKEN
+const environmentId = process.env.CONTENTFUL_ENVIRONMENT_ID
 
 
 const getEnvironment = async () => {
