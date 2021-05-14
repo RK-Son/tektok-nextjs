@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Card from 'react-bootstrap/Card'
 
 import styles from '../../styles/Products.module.css'
+import {getProducts} from "../../utils/contentful";
 
 function Index(props) {
 
@@ -34,12 +35,11 @@ function Index(props) {
 }
 
 export const getServerSideProps = async (context) => {
-    const res = await fetch('https://fakestoreapi.com/products?limit=15')
-    const products = await res.json();
-
+    const products = await getProducts()
+    console.log(products)
     return {
         props: {
-            products
+            products: products
         }
     }
 }

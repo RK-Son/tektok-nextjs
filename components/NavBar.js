@@ -5,6 +5,7 @@ import {Button, Nav, Navbar, Form, FormControl} from "react-bootstrap";
 import styles from "../styles/NavBar.module.css"
 
 function NavBar(props) {
+    //TODO Chinh navbar color cho dep ti
     return (
         <Navbar className={styles.navbar}>
             <Image src="/Nextjs-logo.svg" width={79} height={49}/>

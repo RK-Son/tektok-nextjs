@@ -10,6 +10,7 @@ function ProductDetail({product}) {
     useEffect(() => {
         document.getElementById(`btn-${product.id}`)
             .addEventListener('click', function () {
+                //TODO back() tuong doi, k chinh xac khi navigate
                 router.back()
             })
         console.log(Math.random());
